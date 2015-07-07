@@ -1,0 +1,34 @@
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+* {
+  border: 1px solid green;
+}
+
+body {
+  background: red;
+
+}
+
+.progress {
+  width: 30%;
+  display: inline-block;
+}
+
+.player1 {
+  float: left;
+  margin-left: 100px;
+}
+
+
+.player2 {
+  float: right;
+  margin-right: 100px;
+}
+
+p {
+  text-align: center;
+
+}

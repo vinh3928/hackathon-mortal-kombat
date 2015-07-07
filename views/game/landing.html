@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+  </head>
+  <body>
+    {{#questions}}
+    <div>
+      <p>{{question}}</p>
+    </div>
+    <form action="/questions/{{_id}}" method="POST">
+      <label for="a">
+        <input type="radio" name="answer" id="a" value="a" />
+        {{answer.a}}
+      </label>
+      <label for="b">
+        <input type="radio" name="answer" id="b" value="b" />
+        {{answer.b}}
+      </label>
+      <label for="c">
+        <input type="radio" name="answer" id="c" value="c" />
+        {{answer.c}}
+      </label>
+      <input type="submit" name="" id="" value="Submit" />
+    </form>
+    {{/questions}}
+  </body>
+</html>
