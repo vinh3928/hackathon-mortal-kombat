@@ -4,15 +4,15 @@ var router = require("routes")(),
   questions = db.get("questions"),
   qs = require("qs"),
   view = require("./../view"),
-  mime = require("mime"),
-  count = 1;
+  mime = require("mime");
+
 
 module.exports = {
   landing: (req, res, url) => {
     res.setHeader("Content-Type", "text/html");
     if (req.method === "GET") {
       questions.find({}, function (err, data) {
-        var template = view.render("game/landing", {questions: data});
+        var template = view.render("game/fights", {questions: data});
         res.end(template);
       });
     }
@@ -20,7 +20,6 @@ module.exports = {
 
   getAnswer: (req, res, url) => {
     res.setHeader("Content-Type", "text/html");
-
     if (req.method === "POST") {
       var data = ""
       req.on("data", function (chunk) {
@@ -33,12 +32,11 @@ module.exports = {
           if (docs.rightAnswer === formatData.answer) {
             var template = view.render("game/fights", {});
             res.end(template);
-            return;
+            // return;
           }
-            var template = view.render("game/lose", {});
-            res.end(template);
+            // var template = view.render("game/lose", {});
+            // res.end(template);
         });
-         // do things
       });
     }
   },
@@ -51,3 +49,7 @@ module.exports = {
     });
   }
 };
+
+//new XHR post request
+//prevent default on the form
+  //on form submit add event listener, the event stop default, collect form data that i would've sent package as ajax request and send it off.  response from that will update dom
