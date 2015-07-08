@@ -20,23 +20,10 @@ module.exports = {
 
   getAnswer: (req, res, url) => {
     res.setHeader("Content-Type", "text/html");
-    if (req.method === "POST") {
-      var data = ""
-      req.on("data", function (chunk) {
-        data += chunk;
-      });
-
-      req.on("end", function(){
-        var formatData = qs.parse(data);
-        var foo = questions.findOne({_id: url.params.id}, function (err, docs) {
-          if (docs.rightAnswer === formatData.answer) {
-            var template = view.render("game/fights", {});
-            res.end(template);
-            // return;
-          }
-            // var template = view.render("game/lose", {});
-            // res.end(template);
-        });
+    if (req.method === "GET") {
+      res.setHeader("Content-Type", "appliation/json");
+      questions.findOne({_id: url.params.id}, function (err, doc) {
+        res.end(doc.rightAnswer);
       });
     }
   },

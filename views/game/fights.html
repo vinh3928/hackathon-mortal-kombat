@@ -25,13 +25,13 @@
 
     <img src="/public/scorpion-standing.png" id="sc-standing" alt="Scorpion">
 
-  <section>
+  <section id="forms">
     {{#questions}}
     <div>
       <p>{{question}}</p>
     </div>
     <p>
-    <form action="/questions/{{_id}}" method="POST">
+    <form onsubmit="return mySubmit()" action="/{{_id}}" method="POST">
       <label for="a">
         <input type="radio" name="answer" id="a" value="a" />
         {{answer.a}}
@@ -48,7 +48,7 @@
       </label>
       <br>
       <p>
-      <input type="submit" name="" class="submit" value="Submit" />
+      <input type="submit" name="" id="{{_id}}" class="submit" value="Submit" />
     </form>
     {{/questions}}
   </section>
