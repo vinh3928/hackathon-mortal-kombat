@@ -1,20 +1,32 @@
-
 *, *:after, *:before {
   box-sizing: border-box;
 }
 
-* {
-  border: 1px solid green;
+body {
+ background: url(/public/bg.png) no-repeat center center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
 }
 
-body {
-  background: red;
+div, radio, label {
+  color: white;
+}
 
+section {
+  padding: 1%;
+  width: 30%;
+  margin-right: 5%;
+  float: right;
+/*   border: 3px solid white; */
 }
 
 .progress {
+  margin-top: 50px;
   width: 30%;
   display: inline-block;
+  border: 1px solid black;
 }
 
 .player1 {
@@ -22,13 +34,29 @@ body {
   margin-left: 100px;
 }
 
-
 .player2 {
   float: right;
   margin-right: 100px;
 }
 
-p {
-  text-align: center;
+button {
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  border-radius: 5px;
+}
 
+#sz-standing {
+  position: absolute;
+  top: 45%;
+  left: 37%;
+}
+
+#sc-standing {
+  position: absolute;
+  top: 45%;
+  right: 37%;
 }

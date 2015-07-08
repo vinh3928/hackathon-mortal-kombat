@@ -8,6 +8,6 @@ var routes = require("routes")(),
   qRoutes = require("./routes/questions");
 
   routes.addRoute("/", qRoutes.landing);
-  routes.addRoute("/questions/:id", qRoutes.getAnswer);
+  routes.addRoute(":id", qRoutes.getAnswer);
   routes.addRoute("/public/*", qRoutes.publicFile);
   module.exports = routes;
