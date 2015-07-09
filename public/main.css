@@ -60,3 +60,7 @@ button {
   top: 45%;
   right: 37%;
 }
+
+p {
+  display: inline-block;
+}

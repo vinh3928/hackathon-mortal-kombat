@@ -11,10 +11,12 @@ module.exports = {
   landing: (req, res, url) => {
     res.setHeader("Content-Type", "text/html");
     if (req.method === "GET") {
-      questions.find({}, function (err, data) {
-        var template = view.render("game/fights", {questions: data});
+      //questions.find({}, function (err, data) {
+        //var template = view.render("game/fights", {questions: data});
+        
+        var template = fs.readFileSync("views/game/fights.html")
         res.end(template);
-      });
+      //});
     }
   },
 
@@ -34,6 +36,17 @@ module.exports = {
       if (err) res.end(404);
       res.end(file);
     });
+  },
+
+  getQuestions: (req, res, url) => {
+    res.setHeader("Content-Type", "text/html");
+    if (req.method === "GET") {
+      res.setHeader("Content-Type", "application/json");
+      questions.find({}, function (err, doc) {
+        res.end(JSON.stringify(doc));
+      });
+
+    }
   }
 };
 

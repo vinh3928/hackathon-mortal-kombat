@@ -26,31 +26,29 @@
     <img src="/public/scorpion-standing.png" id="sc-standing" alt="Scorpion">
 
   <section id="forms">
-    {{#questions}}
     <div>
-      <p>{{question}}</p>
+      <p id="question"></p>
     </div>
     <p>
     <form onsubmit="return mySubmit()" action="/{{_id}}" method="POST">
       <label for="a">
         <input type="radio" name="answer" id="a" value="a" />
-        {{answer.a}}
+        <p id="answer-a"></p>
       </label>
       <br>
       <label for="b">
         <input type="radio" name="answer" id="b" value="b" />
-        {{answer.b}}
+        <p id="answer-b"></p>
       </label>
       <br>
       <label for="c">
         <input type="radio" name="answer" id="c" value="c" />
-        {{answer.c}}
+        <p id="answer-c"></p>
       </label>
       <br>
       <p>
       <input type="submit" name="" id="{{_id}}" class="submit" value="Submit" />
     </form>
-    {{/questions}}
   </section>
 
     <script type="text/javascript" charset="utf-8" src="/public/library.js"></script>

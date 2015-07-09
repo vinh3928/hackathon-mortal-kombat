@@ -8,6 +8,7 @@ var routes = require("routes")(),
   qRoutes = require("./routes/questions");
 
   routes.addRoute("/", qRoutes.landing);
+  routes.addRoute("/questions.json", qRoutes.getQuestions);
   routes.addRoute("/:id.json", qRoutes.getAnswer);
   routes.addRoute("/public/*", qRoutes.publicFile);
   module.exports = routes;
