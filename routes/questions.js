@@ -13,8 +13,7 @@ module.exports = {
     if (req.method === "GET") {
       //questions.find({}, function (err, data) {
         //var template = view.render("game/fights", {questions: data});
-        
-        var template = fs.readFileSync("views/game/fights.html")
+        var template = fs.readFileSync("views/game/fights.html");
         res.end(template);
       //});
     }
