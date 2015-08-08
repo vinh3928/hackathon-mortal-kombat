@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --harmony app.js"
+    "start": "node --harmony --use_strict --harmony_generators app.js"
   },
   "repository": {
     "type": "git",
@@ -13,6 +13,9 @@
   },
   "keywords": [],
   "author": "",
+  "engines": {
+    "node": "^0.11.9"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vinh3928/hackathon-mortal-kombat/issues"
