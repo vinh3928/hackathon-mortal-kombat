@@ -1,6 +1,7 @@
+require("dotenv").load();
 var router = require("routes")(),
   fs = require("fs"),
-  db = require("monk")("localhost/hack"),
+  db = require("monk")(process.env.MONGOLAB_URI),
   questions = db.get("questions"),
   qs = require("qs"),
   view = require("./../view"),
