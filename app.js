@@ -20,7 +20,7 @@ var server = http.createServer(function (req, res) {
   }
 });
 
-server.listen(8080, function (err) {
+server.listen(process.env.LOCAL || 8080, function (err) {
   if (err) console.log("error", err);
   console.log("listening on 8080");
 

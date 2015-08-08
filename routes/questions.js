@@ -1,7 +1,7 @@
 require("dotenv").load();
 var router = require("routes")(),
   fs = require("fs"),
-  db = require("monk")(process.env.MONGOLAB_URI),
+  db = require("monk")("localhost/hack"),
   questions = db.get("questions"),
   qs = require("qs"),
   view = require("./../view"),
@@ -12,11 +12,10 @@ module.exports = {
   landing: (req, res, url) => {
     res.setHeader("Content-Type", "text/html");
     if (req.method === "GET") {
-      //questions.find({}, function (err, data) {
-        //var template = view.render("game/fights", {questions: data});
-        var template = fs.readFileSync("views/game/fights.html");
+      questions.find({}, function (err, data) {
+        var template = view.render("game/fights", {questions: data});
         res.end(template);
-      //});
+      });
     }
   },
 
