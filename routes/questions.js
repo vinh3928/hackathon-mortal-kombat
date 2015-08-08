@@ -1,3 +1,4 @@
+require('dotenv').config({silent: true});
 require("dotenv").load();
 var router = require("routes")(),
   fs = require("fs"),
