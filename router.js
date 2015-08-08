@@ -1,7 +1,5 @@
 var routes = require("routes")(),
   fs = require("fs"),
-  db = require("monk")(process.env.MONGOLAB_URI),
-  questions = db.get("questions"),
   qs = require("qs"),
   view = require("./view"),
   mime = require("mime"),
