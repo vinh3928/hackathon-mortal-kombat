@@ -9,7 +9,7 @@ var router = require("routes")(),
 
 
 module.exports = {
-  landing: (req, res, url) => {
+  landing: function (req, res, url) {
     res.setHeader("Content-Type", "text/html");
     if (req.method === "GET") {
       questions.find({}, function (err, data) {
@@ -19,7 +19,7 @@ module.exports = {
     }
   },
 
-  getAnswer: (req, res, url) => {
+  getAnswer: function (req, res, url) {
     res.setHeader("Content-Type", "text/html");
     if (req.method === "GET") {
       res.setHeader("Content-Type", "appliation/json");
@@ -29,7 +29,7 @@ module.exports = {
     }
   },
 
-  publicFile: (req, res, url) => {
+  publicFile: function (req, res, url) {
     res.setHeader("Content-Type", mime.lookup(req.url));
     fs.readFile("." + req.url, function (err, file) {
       if (err) res.end(404);
@@ -37,7 +37,7 @@ module.exports = {
     });
   },
 
-  getQuestions: (req, res, url) => {
+  getQuestions: function (req, res, url) {
     res.setHeader("Content-Type", "text/html");
     if (req.method === "GET") {
       res.setHeader("Content-Type", "application/json");
